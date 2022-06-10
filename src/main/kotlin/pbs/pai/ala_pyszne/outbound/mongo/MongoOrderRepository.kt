@@ -11,7 +11,7 @@ class MongoOrderRepository(private val repository: MongoEntityOrderRepository) :
     override fun save(order: Order): Order =
         repository.save(order)
 
-    override fun cancel(id: String) {
-        repository.deleteById(id)
-    }
+    override fun cancel(id: String): Order? =
+        repository.findByIdOrNull(id)?.also { repository.delete(it)  }
+
 }

@@ -5,9 +5,8 @@ import java.time.LocalDateTime
 
 data class OrderData(
     val customerData: CustomerData,
-    val fromRestaurant: RestaurantData,
+    val fromRestaurant: Restaurant,
     val orderedAt: LocalDateTime,
     val destination: Address,
-    val items: List<MenuItem>,
-    val totalCost: Double,
+    val items: List<MenuItem>
 )

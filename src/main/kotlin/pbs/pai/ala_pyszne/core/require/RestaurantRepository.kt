@@ -7,6 +7,6 @@ interface RestaurantRepository {
 
     fun save(restaurant: Restaurant): Restaurant
 
-    fun update(restaurant: Restaurant): Restaurant
+    fun update(restaurant: Restaurant): Restaurant?
 
 }
