@@ -1,4 +1,4 @@
-package pbs.pai.ala_pyszne.core.domain.require
+package pbs.pai.ala_pyszne.core.require
 
 import pbs.pai.ala_pyszne.core.domain.Order
 

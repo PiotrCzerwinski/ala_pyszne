@@ -2,7 +2,7 @@ package pbs.pai.ala_pyszne.outbound.mongo
 
 import org.springframework.data.repository.findByIdOrNull
 import pbs.pai.ala_pyszne.core.domain.Order
-import pbs.pai.ala_pyszne.core.domain.require.OrderRepository
+import pbs.pai.ala_pyszne.core.require.OrderRepository
 
 class MongoOrderRepository(private val repository: MongoEntityOrderRepository) : OrderRepository {
     override fun findById(id: String): Order? =

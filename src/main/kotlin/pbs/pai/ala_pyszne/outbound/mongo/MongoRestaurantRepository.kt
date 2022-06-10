@@ -1,7 +1,7 @@
 package pbs.pai.ala_pyszne.outbound.mongo
 
 import pbs.pai.ala_pyszne.core.domain.Restaurant
-import pbs.pai.ala_pyszne.core.domain.require.RestaurantRepository
+import pbs.pai.ala_pyszne.core.require.RestaurantRepository
 
 class MongoRestaurantRepository(private val repository: MongoEntityRestaurantRepository) : RestaurantRepository {
     override fun save(restaurant: Restaurant): Restaurant =
