@@ -34,4 +34,8 @@ class RestaurantUseCase(
         )
     }
 
+    fun getAll(): List<Restaurant> {
+        return repository.findAll()
+    }
+
 }

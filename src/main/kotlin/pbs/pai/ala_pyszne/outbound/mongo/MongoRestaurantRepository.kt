@@ -1,5 +1,6 @@
 package pbs.pai.ala_pyszne.outbound.mongo
 
+import org.springframework.data.domain.Page
 import org.springframework.data.repository.findByIdOrNull
 import pbs.pai.ala_pyszne.core.domain.Restaurant
 import pbs.pai.ala_pyszne.core.require.RestaurantRepository
@@ -18,4 +19,7 @@ class MongoRestaurantRepository(private val repository: MongoEntityRestaurantRep
                 menuItems = restaurant.menuItems
             )?.let(::save)
 
-    }
+    override fun findAll(): List<Restaurant> =
+        repository.findAll()
+
+}

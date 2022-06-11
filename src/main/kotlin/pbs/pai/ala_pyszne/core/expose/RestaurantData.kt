@@ -11,5 +11,4 @@ data class RestaurantData(
     val openedFrom: LocalTime,
     val openedTo: LocalTime,
     val menuItems: List<MenuItem>
-
 )
