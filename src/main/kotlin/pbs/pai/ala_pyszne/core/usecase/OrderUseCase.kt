@@ -24,12 +24,12 @@ class OrderUseCase(
                     orderData.customerData.phoneNumber,
                     orderData.customerData.email,
                 ),
-                orderData.fromRestaurant,
+                orderData.restaurantId,
                 LocalDateTime.now(),
                 orderData.destination,
                 orderData.items,
                 orderData.items.sumOf { it.price },
-                (Random.nextInt(100000000 - 1000000000) + 100000000).toString(),
+                "654765234",
                 OrderStatus.CREATED
             )
         )

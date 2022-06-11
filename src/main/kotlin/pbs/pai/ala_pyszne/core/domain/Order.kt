@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 data class Order(
     val id: String,
     val customer: Customer,
-    val fromRestaurant:Restaurant,
+    val restaurantId: String,
     val orderedAt: LocalDateTime,
     val destination: Address,
     val items: List<MenuItem>,
