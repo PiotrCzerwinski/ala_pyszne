@@ -1,7 +1,6 @@
 package pbs.pai.ala_pyszne.core.expose
 
 import pbs.pai.ala_pyszne.core.domain.Address
-import pbs.pai.ala_pyszne.core.domain.MenuItem
 import java.time.LocalTime
 
 data class RestaurantData(
@@ -10,5 +9,5 @@ data class RestaurantData(
     val address: Address,
     val openedFrom: LocalTime,
     val openedTo: LocalTime,
-    val menuItems: List<MenuItem>
+    val menuItems: List<MenuItemData>
 )

@@ -28,38 +28,41 @@ class DataInit(
             LocalTime.of(21, 30),
             listOf(
                 MenuItem(
-                    "Margarita", 39.0, listOf(
+                    UUID.randomUUID().toString(),
+                    "Margarita",
+                    39.0,
+                    listOf(
                         Ingredient("Mozarella"),
                         Ingredient("Sos pomidorowy")
                     )
                 )
-            )
-        )
-        restaurantRepository.save(pizzaIGitara)
+            ))
 
-        orderRepository.save(
-            Order(
+            restaurantRepository.save(pizzaIGitara)
+
+            orderRepository.save(
+                Order(
                 "order-id-1",
-                Customer(
-                    UUID.randomUUID().toString(),
-                    "Piotr",
-                    "Czerwiński",
-                    "567891234",
-                    "czerwinski@gmail.com"
-                ),
-                pizzaIGitara.id,
-                LocalDateTime.now(),
-                Address(
-                    "Bydgoszcz",
-                    "Sniadeckich",
-                    "13",
-                ),
-                listOf(pizzaIGitara.menuItems.first()),
-                pizzaIGitara.menuItems.first().price,
-                "789567345",
-                OrderStatus.CREATED
+                    Customer(
+                        UUID.randomUUID().toString(),
+                        "Piotr",
+                        "Czerwiński",
+                        "567891234",
+                        "czerwinski@gmail.com"
+                    ),
+                    pizzaIGitara.id,
+                    LocalDateTime.now(),
+                    Address(
+                        "Bydgoszcz",
+                        "Sniadeckich",
+                        "13",
+                    ),
+                    listOf(pizzaIGitara.menuItems.first()),
+                    pizzaIGitara.menuItems.first().price,
+                    "789567345",
+                    OrderStatus.CREATED
             )
-        )
+            )
     }
 
     override fun run(vararg args: String?) {

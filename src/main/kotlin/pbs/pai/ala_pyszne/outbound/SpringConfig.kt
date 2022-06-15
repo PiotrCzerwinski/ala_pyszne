@@ -2,6 +2,7 @@ package pbs.pai.ala_pyszne.outbound
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import pbs.pai.ala_pyszne.core.require.MenuItemRepository
 import pbs.pai.ala_pyszne.core.require.OrderRepository
 import pbs.pai.ala_pyszne.core.require.RestaurantRepository
 import pbs.pai.ala_pyszne.core.usecase.OrderUseCase
@@ -20,9 +21,14 @@ class SpringConfig {
         MongoRestaurantRepository(repository)
 
     @Bean
+    fun menuItemRepository(repository: MongoEntityMenuItemRepository): MenuItemRepository =
+        MongoMenuItemRepository(repository)
+
+    @Bean
     fun restaurantUseCase(
-        repository: RestaurantRepository
-    ): RestaurantUseCase = RestaurantUseCase(repository)
+        restaurantRepository: RestaurantRepository,
+        menuItemRepository: MenuItemRepository
+    ): RestaurantUseCase = RestaurantUseCase(restaurantRepository, menuItemRepository)
 
     @Bean
     fun orderUseCase(
