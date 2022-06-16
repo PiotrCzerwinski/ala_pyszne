@@ -7,5 +7,5 @@ data class OrderData(
     val restaurantId:String,
     val customerData: CustomerData,
     val destination: Address,
-    val items: List<MenuItem>
+    val menuItemIdAndAmount: Map<String,Int>
 )

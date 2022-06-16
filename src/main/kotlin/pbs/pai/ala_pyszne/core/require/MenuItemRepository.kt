@@ -8,4 +8,5 @@ interface MenuItemRepository {
     fun addMenuItem(menuItemData: MenuItemData): MenuItem
     fun updateMenuItem(menuItemId: String, menuItemData: MenuItemData): MenuItem?
     fun removeMenuItem(menuItemId: String)
+    fun findByIds(ids: Set<String>): List<MenuItem>
 }
