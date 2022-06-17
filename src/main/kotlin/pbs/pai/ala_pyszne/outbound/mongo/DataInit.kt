@@ -28,7 +28,7 @@ class DataInit(
             LocalTime.of(21, 30),
             listOf(
                 MenuItem(
-                    UUID.randomUUID().toString(),
+                    "Margarita-id",
                     "Margarita",
                     39.0,
                     listOf(
