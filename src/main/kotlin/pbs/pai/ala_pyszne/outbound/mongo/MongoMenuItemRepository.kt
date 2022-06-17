@@ -7,10 +7,10 @@ import pbs.pai.ala_pyszne.core.require.MenuItemRepository
 import java.util.UUID
 
 class MongoMenuItemRepository(
-    private val repository: MongoEntityMenuItemRepository
+    private val menuItemRepository: MongoEntityMenuItemRepository,
 ): MenuItemRepository {
     override fun addMenuItem(menuItemData: MenuItemData): MenuItem =
-        repository.save(
+        menuItemRepository.save(
             MenuItem(
                 UUID.randomUUID().toString(),
                 menuItemData.name,
@@ -19,15 +19,19 @@ class MongoMenuItemRepository(
             )
         )
     override fun updateMenuItem(menuItemId: String, menuItemData: MenuItemData): MenuItem? =
-        repository.findByIdOrNull(menuItemId)
+        menuItemRepository.findByIdOrNull(menuItemId)
             ?.copy(
                 name = menuItemData.name,
                 price = menuItemData.price,
                 ingredients = menuItemData.ingredients
-        )?.let { repository.save(it)}
+        )?.let { menuItemRepository.save(it)}
 
 
     override fun removeMenuItem(menuItemId: String) {
-        repository.deleteById(menuItemId)
+        menuItemRepository.deleteById(menuItemId)
     }
+
+    override fun findByIds(ids: Set<String>): List<MenuItem> =
+        menuItemRepository.findByIdIn(ids)
+
 }

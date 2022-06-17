@@ -32,8 +32,9 @@ class SpringConfig {
 
     @Bean
     fun orderUseCase(
-        repository: OrderRepository
-    ): OrderUseCase = OrderUseCase(repository)
+        orderRepository: OrderRepository,
+        menuItemRepository: MenuItemRepository
+    ): OrderUseCase = OrderUseCase(orderRepository, menuItemRepository)
 
     @Bean
     fun dataInit(
