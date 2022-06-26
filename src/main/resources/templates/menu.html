@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 th:text="${restaurant.name}"></h1>
+<nav>
+  <ul>
+    <li><a href="/menu">Menu</a></li>
+    <li><a href="kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+<main>
+  <table class="menu">
+    <tr>
+      <th>Pizza</th>
+      <th>Cena</th>
+    </tr>
+    <tr th:each="item: ${restaurant.menuItems}">
+      <td>
+        <p th:text="${item.name}"></p>
+        <p>
+          <span th:each="ingredient: ${item.ingredients}" th:text="${ingredient.name}"></span>
+        </p>
+      </td>
+      <td th:text="${item.price}"></td>
+    </tr>
+  </table>
+</main>
+</body>
+</html>
