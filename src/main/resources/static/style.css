@@ -23,6 +23,11 @@ h1{
     color: #e9e9e9;
     text-shadow: 2px 2px 4px black;
 }
+a.main-page, a.main-page:visited, a.main-page:active{
+    color: #e9e9e9;
+    text-decoration: none;
+    width: 100%;
+}
 nav{
     width: 100%;
     display: flex;
@@ -53,11 +58,20 @@ main{
     padding: 50px;
     font-size: 20px;
 }
+.menu{
+    border-collapse: collapse;
+}
 .menu tr{
     text-align: left;
 }
+.menu tr:nth-child(odd){
+    background-color: #c8c8c8;
+}
 .menu th, .menu td{
-    padding: 10px;
+    padding: 10px 20px;
+}
+.menu th{
+    background-color: #adadad;
 }
 .menu td{
     font-size: 16px;
@@ -67,5 +81,13 @@ main{
     margin-right: 5px;
 }
 .menu td span:not(:last-child)::after{
+    content: ",";
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.contact p:first-child::after{
     content: ",";
 }

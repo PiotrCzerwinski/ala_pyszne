@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1 th:text="${restaurant.name}"></h1>
+<a class="main-page" href="/"><h1 th:text="${restaurant.name}"></h1></a>
 <nav>
     <ul>
-        <li><a href="/menu">Menu</a></li>
-        <li><a href="kontakt">Kontakt</a></li>
+        <a href="/menu"><li>Menu</li></a>
+        <a href="/kontakt"><li>Kontakt</li></a>
     </ul>
 </nav>
 <main>

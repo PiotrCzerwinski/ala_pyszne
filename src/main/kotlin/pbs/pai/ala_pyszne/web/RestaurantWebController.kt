@@ -3,7 +3,6 @@ package pbs.pai.ala_pyszne.web
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import pbs.pai.ala_pyszne.core.usecase.RestaurantUseCase
